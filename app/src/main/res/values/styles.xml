@@ -12,7 +12,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:background">#b817d4</item>
+        <item name="android:background">#0D3ADD</item>
         <item name="android:textSize">35sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_margin">0.5dp</item>
@@ -42,7 +42,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:background">#69b013</item>
+        <item name="android:background">#FF0889B1</item>
         <item name="android:textSize">35sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_margin">0.5dp</item>
@@ -52,7 +52,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">2</item>
-        <item name="android:background">#69b013</item>
+        <item name="android:background">#FF0889B1</item>
         <item name="android:textSize">35sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_margin">0.5dp</item>
