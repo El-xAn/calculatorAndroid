@@ -27,8 +27,13 @@ class MainActivity : AppCompatActivity() {
     fun equal(view: View) {
         var display = operations.text.toString()
 
-        if(display == "" || display.endsWith(".") || display.endsWith("+") || display.endsWith("-") || display.endsWith("*") || display.endsWith("/"))gti {
+        if(display == "" ) {
             operations.text = ""
+        } else if(display.endsWith(".") || display.endsWith("+") || display.endsWith("-") || display.endsWith("*") || display.endsWith("/")) {
+            operations.text = display
+            isOp = false
+        } else if (display.contains("/0")){
+            operations.text = "!Cannot divided by ZERO"
         } else {
             val ex = ExpressionBuilder(operations.text.toString()).build()
             resultMain = ex.evaluate()
@@ -41,8 +46,9 @@ class MainActivity : AppCompatActivity() {
                 result.text = resultMain.toString()
                 operations.text = number1Input
             }
+            isOp = true
         }
-        isOp = true
+        isDot = true
     }
 
     fun operationNumbers(view: View) {
@@ -54,39 +60,57 @@ class MainActivity : AppCompatActivity() {
 
         when (numResult.id) {
             button_0.id -> {
-                click += "0"
+                if(isEqual){
+                    click += 0
+                    isEqual =false
+                }
+                if(!isDot){
+                    click += 0
+                } else {
+                    operations.text = click
+                }
             }
             button_1.id -> {
                 click += "1"
+                isOp = true
             }
             button_2.id -> {
                 click += "2"
+                isOp = true
             }
             button_3.id -> {
                 click += "3"
+                isOp = true
             }
             button_4.id -> {
                 click += "4"
+                isOp = true
             }
             button_5.id -> {
                 click += "5"
+                isOp = true
             }
             button_6.id -> {
                 click += "6"
+                isOp = true
             }
             button_7.id -> {
                 click += "7"
+                isOp = true
             }
             button_8.id -> {
                 click += "8"
+                isOp = true
             }
             button_9.id -> {
                 click += "9"
+                isOp = true
             }
             button_dot.id -> {
                 if (click.isNotEmpty() && isDot) {
                     repeat(1) {
                         click += "."
+                        isOp = false
                         isDot = false
                     }
                 }
@@ -103,7 +127,6 @@ class MainActivity : AppCompatActivity() {
             number1Input = ""
             click = ""
         }
-        isOp = true
     }
 
     fun mathOperations(view : View) {
@@ -168,9 +191,9 @@ class MainActivity : AppCompatActivity() {
         } else {
             operations.text = ""
         }
-
         isOp = true
         isDot = true
+        isEqual = true
     }
 }
 
